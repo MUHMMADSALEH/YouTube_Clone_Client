@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'https://65e89fcf6d9dcd1e4856f8bd--bright-cheesecake-57616f.netlify.app',
+    origin: 'http://localhost:5173',
     credentials:true
 }));
 app.use('/api/auth',authRoutes);
