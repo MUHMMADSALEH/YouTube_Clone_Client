@@ -15,7 +15,7 @@ export const addvideo=async(req,res)=>{
     }
 }
 export const getAllVideos=async(req,res)=>{
-   
+   console.log("api hit")
     try{
         const allVideos=await prisma.video.findMany({select:{
             id:true,
