@@ -2,6 +2,7 @@ import { prisma } from "../connection.js";
 
 
 export const addvideo=async(req,res)=>{
+    console.log("add video")
     const {videoUrl,imageUrl,videoTitle,videoDesc,userId}=req.body;
     
     try{
@@ -11,11 +12,12 @@ export const addvideo=async(req,res)=>{
         return res.status(200).json({success:true,message:"video successfully uploaded",newVideo})
    
     }catch(e){
+        console.log(e)
         return res.status(500).json(e.message)
     }
 }
 export const getAllVideos=async(req,res)=>{
-   console.log("api hit")
+//    console.log("api hit")
     try{
         const allVideos=await prisma.video.findMany({select:{
             id:true,
